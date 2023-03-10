@@ -1,4 +1,5 @@
 import notesStore from "../stores/notesStore";
+import "../components/styles/CreateForm.scss"
 
 export default function CreateForm() {
   const store = notesStore();
@@ -6,7 +7,7 @@ export default function CreateForm() {
   if (store.updateForm._id) return <></>;
 
   return (
-    <div>
+    <div className="create-form">
       <h2>Create note</h2>
       <form onSubmit={store.createNote}>
         <input

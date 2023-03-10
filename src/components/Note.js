@@ -1,4 +1,5 @@
 import notesStore from "../stores/notesStore";
+import "../components/styles/Note.scss"
 
 export default function Note({ note }) {
   const store = notesStore((store) => {
@@ -8,7 +9,7 @@ export default function Note({ note }) {
     };
   });
   return (
-    <div key={note._id}>
+    <div key={note._id} className="note">
       <h3>{note.title}</h3>
       <button onClick={() => store.deleteNote(note._id)}>Delete note</button>
       <button onClick={() => store.toggleUpdate(note)}>Update note</button>

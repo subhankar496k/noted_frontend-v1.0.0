@@ -5,26 +5,30 @@ import LoginPage from "../pages/LoginPage";
 import RequireAuth from "./RequireAuth";
 import SignupPage from "../pages/SignupPage";
 import LogoutPage from "../pages/LogoutPage";
+import "./styles/App.scss";
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <BrowserRouter>
-        {/* unordered list */}
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li>
-            <Link to="/logout">Logout</Link>
-          </li>
-        </ul>
+        <nav className="nav-bar">
+          {/* unordered list */}
+          <ul className="nav-links">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+            <li>
+              <Link to="/logout">Logout</Link>
+            </li>
+          </ul>
+        </nav>
+
         <Routes>
           <Route
             index
@@ -36,7 +40,7 @@ function App() {
           />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/logout" element={<LogoutPage/>} />
+          <Route path="/logout" element={<LogoutPage />} />
         </Routes>
       </BrowserRouter>
     </div>
